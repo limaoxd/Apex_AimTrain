@@ -3,6 +3,8 @@ import json
 import math
 import time
 import tkinter as tk
+import win32gui
+import win32con
 from multiprocessing.connection import Listener
 from tracemalloc import start
 from PIL import Image, ImageTk, ImageFilter, ImageOps, ImageDraw
@@ -35,6 +37,8 @@ canvas.config(bg='white')
 gun = guns['flatline']
 pos = []
 mouse_motion = [0, 0]
+hwnd = win32gui.GetForegroundWindow()
+win32gui.SetWindowPos(root.winfo_id(), win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOMOVE | win32con.SWP_NOSIZE)
 
 with open(gun['location'], "r") as f:
     i = 0
