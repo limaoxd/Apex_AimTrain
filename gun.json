@@ -9,6 +9,12 @@
         "size": 28,
         "RPM": 810
     },
+    "nemesis": {
+        "location": "./sorted_location/nemesis.txt",
+        "size": 32,
+        "RPM": 637,
+        "RPM1": 738
+    },
     "r99": {
         "location": "./sorted_location/r99.txt",
         "size": 27,

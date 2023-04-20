@@ -3,5 +3,5 @@ time
 tkinter
 multiprocessing
 tracemalloc
-PIL
+Pillow
 pynput

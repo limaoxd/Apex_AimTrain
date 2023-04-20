@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 class a:
-    img = cv2.imread('./guns/car.png')
+    img = cv2.imread('./guns/nemesis.png')
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     rows = gray.shape[0]

@@ -54,29 +54,33 @@ with open(gun['location'], "r") as f:
         i += 1
 
 def press(key):
-    global guns, gun, pos
+    global guns, gun, pos, mod
     try:
         if key == key.f12:
             root.destroy()
-        elif key == key.f1 or key == key.f2 or key == key.f3 or key == key.f4 or key == key.f5 or key == key.f6:
+        elif key == key.f1 or key == key.f2 or key == key.f3 or key == key.f4 or key == key.f5 or key == key.f6 or key == key.f7:
+            mod = 0
             if key == key.f1:
                 gun = guns['flatline']
-                print("change to flatline")
+                #print("change to flatline")
             elif key == key.f2:
                 gun = guns['r301']
-                print("change to r301")
+                #print("change to r301")
             elif key == key.f3:
-                gun = guns['r99']
-                print("change to r99")
+                gun = guns['nemesis']
+                #print("change to nemesis")
             elif key == key.f4:
-                gun = guns['car']
-                print("change to car")
+                gun = guns['r99']
+                #print("change to r99")
             elif key == key.f5:
-                gun = guns['volt']
-                print("change to volt")
+                gun = guns['car']
+                #print("change to car")
             elif key == key.f6:
+                gun = guns['volt']
+                #print("change to volt")
+            elif key == key.f7:
                 gun = guns['re45']
-                print("change to re45")
+                #print("change to re45")
             pos.clear()
             with open(gun['location'], "r") as f:
                 i = 0
@@ -108,7 +112,7 @@ def angle_correct(a):
     return a
 
 def setAxisAngle(src, angle, dis, ratio):
-    global canvas, img, photo, w, h
+    global canvas, img, photo, w, h, mod
     p = Image.open(src)
     p = p.rotate(angle)
     p = p.filter(ImageFilter.SMOOTH)
@@ -139,22 +143,39 @@ mouseClick = mouse.Listener(on_click=click)
 timer = 0
 i=0
 d=5
+mod=0
+preInterval=0
 def main():
     start_time = time.perf_counter()
-    global canvas, left, right, gun, i, pos, timer, mouse_motion, root, photo, w, h, img
+    global canvas, left, right, gun, i, pos, timer, mouse_motion, root, photo, w, h, img, mod, preInterval
     photo = Image.new('RGBA', (300, 300), (0, 0, 0, 0))
     if gun != None:
         ind = 0
-        interval = 60 / gun['RPM'] * 1000
+        if mod !=2:
+            interval = 60 / gun['RPM'] * 1000
+        else:
+            interval = 60 / gun['RPM1'] * 1000
+        if gun['size'] == 32 and mod==0:
+            preInterval = interval
         setAxisAngle("./UI/arrow.png", pos[0], -1, 0)
         if left and right:
-            ind = int(i // interval) + 1
+            if mod != 1:
+                ind = int(i // interval) + 1
+            else:
+                ind = int((i-preInterval*23)//interval) + 24
             if ind < gun['size'] - 1:
-                for j in range(ind, min(len(pos), ind + 9)):    
-                    dis = (j * interval - i)/ d
+                for j in range(ind, min(len(pos), ind + 9)):
+                    if gun['size'] == 32 and j > 23 and mod != 2:
+                        interval = 60 / gun['RPM1'] * 1000
+                        mod = 1
+                        dis = (24 * preInterval + interval * (j - 23) - i)/ d #because interval are less but passedtime need same.
+                    else:
+                        dis = (j * interval - i)/ d
                     ratio = j / (gun['size'] - 1)
                     setAxisAngle("./UI/next.png", pos[j], dis, ratio)
                 i += (time.perf_counter() - start_time) * 1000 + 1
+            elif gun['size'] == 32: #if gun is nemesis and charged full then switch mod to 1.
+                mod = 2
         else:
             setAxisAngle("./UI/next.png", pos[0], 0, 0)
             i = 0
