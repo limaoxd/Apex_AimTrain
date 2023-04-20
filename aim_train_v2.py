@@ -90,6 +90,8 @@ def press(key):
                         pos.append(angle)
                     prev = [int(x), int(y)]
                     i += 1
+        elif key == key.f11:
+            gun = None
     except:
         #do nothing
         pass
@@ -139,24 +141,26 @@ i=0
 d=5
 def main():
     start_time = time.perf_counter()
-    global canvas, left, right, gun, i, pos, timer, mouse_motion, root, photo, w, h
+    global canvas, left, right, gun, i, pos, timer, mouse_motion, root, photo, w, h, img
     photo = Image.new('RGBA', (300, 300), (0, 0, 0, 0))
-    ind = 0
-    interval = 60 / gun['RPM'] * 1000
-    maxdis = (gun['size'] - 1) * interval / d
-    setAxisAngle("./UI/arrow.png", pos[0], -1, 0)
-    if left and right:
-        ind = int(i // interval) + 1
-        if ind < gun['size'] - 1:
-            for j in range(ind, min(len(pos), ind + 9)):    
-                dis = (j * interval - i)/ d
-                ratio = j / (gun['size'] - 1)
-                setAxisAngle("./UI/next.png", pos[j], dis, ratio)
-            i += (time.perf_counter() - start_time) * 1000 + 1
+    if gun != None:
+        ind = 0
+        interval = 60 / gun['RPM'] * 1000
+        setAxisAngle("./UI/arrow.png", pos[0], -1, 0)
+        if left and right:
+            ind = int(i // interval) + 1
+            if ind < gun['size'] - 1:
+                for j in range(ind, min(len(pos), ind + 9)):    
+                    dis = (j * interval - i)/ d
+                    ratio = j / (gun['size'] - 1)
+                    setAxisAngle("./UI/next.png", pos[j], dis, ratio)
+                i += (time.perf_counter() - start_time) * 1000 + 1
+        else:
+            setAxisAngle("./UI/next.png", pos[0], 0, 0)
+            i = 0
     else:
-        setAxisAngle("./UI/next.png", pos[0], 0, 0)
-        i = 0
-    
+        img = ImageTk.PhotoImage(photo)
+        canvas.create_image((w - img.width()) // 2, (h - img.height()) // 2, image=img, anchor="nw")
     root.after(1, main) #1 millisecond
     
 listener.start()
