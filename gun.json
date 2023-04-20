@@ -1,0 +1,32 @@
+{
+    "flatline": {
+        "location": "./sorted_location/flatline.txt",
+        "size": 30,
+        "RPM": 600
+    },
+    "r301": {
+        "location": "./sorted_location/r301.txt",
+        "size": 28,
+        "RPM": 810
+    },
+    "r99": {
+        "location": "./sorted_location/r99.txt",
+        "size": 27,
+        "RPM": 1080
+    },
+    "car": {
+        "location": "./sorted_location/car.txt",
+        "size": 26,
+        "RPM": 930
+    },
+    "volt": {
+        "location": "./sorted_location/volt.txt",
+        "size": 26,
+        "RPM": 720
+    },
+    "re45": {
+        "location": "./sorted_location/re45.txt",
+        "size": 25,
+        "RPM": 780
+    }
+}
