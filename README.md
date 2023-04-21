@@ -9,15 +9,10 @@ Make a visualize UI to read your input(mouse or another command) and start the r
 2. Using Powershell or CMD to start command line operation and check python download yet.
     * You can directly open powershell in Apex_AimTrain directory
       * ![image](https://user-images.githubusercontent.com/60803717/233604193-f46411fc-166c-47af-b24f-c781dde6d484.png)
-    * Or use cd to Apex_AimTrain (key in following command)
-      * ![image](https://user-images.githubusercontent.com/60803717/233604669-153efc6f-8595-43e1-a16a-99cdcc7d323d.png)
-      * `cd [yourFilePosition]/Apex_AimTrain`
     * `python --version`
-3. You can directly open powershell in Apex_AimTrain directory or run powershell and use cd to Apex_AimTrain (key in following command)
-    * `cd [yourFilePosition]/Apex_AimTrain`
-4. After previous step, use pip to install the modules which program needed
+3. After previous step, use pip to install the modules which program needed
     * `pip install -r requirement.txt`
-5. Run main program
+4. Run main program
     * `python ./aim_train_v2.py`
     
 # How to start
