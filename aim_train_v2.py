@@ -181,6 +181,7 @@ def main():
             img = ImageTk.PhotoImage(photo)
             canvas.create_image((w - img.width()) // 2, (h - img.height()) // 2, image=img, anchor="nw")
     except:
+        #do nothing
         pass
     root.after(1, main) #1 millisecond
     
