@@ -4,6 +4,11 @@ Make a visualize UI to read your input(mouse or another command) to start the re
 # How to setup requirement
 1. Download python 3.9 (https://www.python.org/downloads/release/python-3913), you can only download windows installer which is the easist method to download python.
 2. Using Powershell or CMD to start command line operation and check python download yet.
+    * You can directly open powershell in Apex_AimTrain directory
+      * ![image](https://user-images.githubusercontent.com/60803717/233604193-f46411fc-166c-47af-b24f-c781dde6d484.png)
+    * Or use cd to Apex_AimTrain (key in following command)
+      * ![image](https://user-images.githubusercontent.com/60803717/233604669-153efc6f-8595-43e1-a16a-99cdcc7d323d.png)
+      * `cd [yourFilePosition]/Apex_AimTrain`
     * `python --version`
 3. You can directly open powershell in Apex_AimTrain directory or run powershell and use cd to Apex_AimTrain (key in following command)
     * `cd [yourFilePosition]/Apex_AimTrain`
