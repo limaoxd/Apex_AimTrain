@@ -24,8 +24,7 @@ Make a visualize UI to read your input(mouse or another command) to start the re
     * F11 Hide GUIs(you can press F1 or another keys to show UI again)
     * F12 Shotdown this program
     > **Note**
-    > Following guns have not add yet
-    >> Spitfire、Rampage、Lstar、Havoc、Devotion、Alternator
+    > Following guns have not add yet : **Spitfire、Rampage、Lstar、Havoc、Devotion、Alternator**
     
     > **Warning**
     > If switch guns not success, you should shotdown this program and restart
