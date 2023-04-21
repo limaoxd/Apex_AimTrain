@@ -5,6 +5,7 @@ Make a visualize UI to read your input(mouse or another command) and start the r
 0. Use `git clone https://github.com/limaoxd/Apex_AimTrain.git` command line or download zip then unzip it.
    * ![image](https://user-images.githubusercontent.com/60803717/233611549-203ee0d6-7a25-4edd-8a63-bbdb12bb5026.png)
 1. Download python 3.9 (https://www.python.org/downloads/release/python-3913), you can only download windows installer which is the simplest method to download python.
+    * >**Note** Make sure you add path to environment ![image](https://user-images.githubusercontent.com/60803717/233634671-845008ac-399c-4920-93b4-94fdd5fc2541.png)
 2. Using Powershell or CMD to start command line operation and check python download yet.
     * You can directly open powershell in Apex_AimTrain directory
       * ![image](https://user-images.githubusercontent.com/60803717/233604193-f46411fc-166c-47af-b24f-c781dde6d484.png)
