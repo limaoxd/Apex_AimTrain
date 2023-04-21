@@ -109,7 +109,7 @@ def angle_correct(a):
     return a
 
 def setAxisAngle(src, angle, dis, ratio):
-    global canvas, img, photo, w, h, mod
+    global img
     p = Image.open(src)
     p = p.rotate(angle)
     p = p.filter(ImageFilter.SMOOTH)
@@ -137,14 +137,13 @@ left = False
 right = False
 listener = keyboard.Listener(on_press=press)
 mouseClick = mouse.Listener(on_click=click)
-timer = 0
 i=0
 d=5
 mod=0
 preInterval=0
 def main():
     start_time = time.perf_counter()
-    global canvas, left, right, gun, i, pos, timer, mouse_motion, root, photo, w, h, img, mod, preInterval
+    global canvas, left, right, gun, i, pos, mouse_motion, root, photo, w, h, img, mod, preInterval
     photo = Image.new('RGBA', (300, 300), (0, 0, 0, 0))
     try:
         if gun != None:
