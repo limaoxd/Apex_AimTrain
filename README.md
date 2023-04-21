@@ -1,5 +1,6 @@
 # Apex_AimTrain
 Make a visualize UI to read your input(mouse or another command) to start the recoil visualize to many rings like music game. 
+
 # How to setup requirement
 1. Download python 3.9 (https://www.python.org/downloads/release/python-3913), you can only download windows installer which is the easist method to download python.
 2. Using Powershell or CMD to start command line operation and check python download yet.
@@ -10,6 +11,7 @@ Make a visualize UI to read your input(mouse or another command) to start the re
     * `pip install -r requirement.txt`
 5. Run main program
     * `python ./aim_train_v2.py`
+    
 # How to start
 0. Setting your Apex to Borderless windows. (If you are using Multiple screen device, you can ignore it.)
 1. Default recoil pattern is Flatline(VK-47).
@@ -31,6 +33,13 @@ Make a visualize UI to read your input(mouse or another command) to start the re
     
     > **Warning**
     > If switch guns not success, you should shotdown this program and restart
+    
+# Other programs
+* **aim_train.py** : Version 1 of AimTrain, only give you now direction that hardly reacting that.
+* **bullet_locate.py** : Helping developer to locating the bullets's position, you can modify the pictures in guns folder and do following commands
+   * Run program and use Redirect command : `python bullet_locate.py > ./location/(name).txt`
+   * I am using Geogebra to list all position and following order to sort positions
+
 # Assets
 Images, audio fragments, weapon names and behavior come from Apex Legends game or from websites created and owned by Electronic Arts Inc. or Respawn Entertainment, who hold the copyright of Apex Legends.
 
