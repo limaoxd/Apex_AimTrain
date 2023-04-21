@@ -146,39 +146,42 @@ def main():
     start_time = time.perf_counter()
     global canvas, left, right, gun, i, pos, timer, mouse_motion, root, photo, w, h, img, mod, preInterval
     photo = Image.new('RGBA', (300, 300), (0, 0, 0, 0))
-    if gun != None:
-        ind = 0
-        if mod !=2:
-            interval = 60 / gun['RPM'] * 1000
-        else:
-            interval = 60 / gun['RPM1'] * 1000
-        if gun['size'] == 32 and mod==0:
-            preInterval = interval
-        setAxisAngle("./UI/arrow.png", pos[0], -1, 0)
-        if left and right:
-            if mod != 1:
-                ind = int(i // interval) + 1
+    try:
+        if gun != None:
+            ind = 0
+            if mod !=2:
+                interval = 60 / gun['RPM'] * 1000
             else:
-                ind = int((i-preInterval*23)//interval) + 24
-            if ind < gun['size'] - 1:
-                for j in range(ind, min(len(pos), ind + 9)):
-                    if gun['size'] == 32 and j > 23 and mod != 2:
-                        interval = 60 / gun['RPM1'] * 1000
-                        mod = 1
-                        dis = (24 * preInterval + interval * (j - 23) - i)/ d #because interval are less but passedtime need same.
-                    else:
-                        dis = (j * interval - i)/ d
-                    ratio = j / (gun['size'] - 1)
-                    setAxisAngle("./UI/next.png", pos[j], dis, ratio)
-                i += (time.perf_counter() - start_time) * 1000 + 1
-            elif gun['size'] == 32: #if gun is nemesis and charged full then switch mod to 1.
-                mod = 2
+                interval = 60 / gun['RPM1'] * 1000
+            if gun['size'] == 32 and mod==0:
+                preInterval = interval
+            setAxisAngle("./UI/arrow.png", pos[0], -1, 0)
+            if left and right:
+                if mod != 1:
+                    ind = int(i // interval) + 1
+                else:
+                    ind = int((i-preInterval*23)//interval) + 24
+                if ind < gun['size'] - 1:
+                    for j in range(ind, min(len(pos), ind + 9)):
+                        if gun['size'] == 32 and j > 23 and mod != 2:
+                            interval = 60 / gun['RPM1'] * 1000
+                            mod = 1
+                            dis = (24 * preInterval + interval * (j - 23) - i)/ d #because interval are less but passedtime need same.
+                        else:
+                            dis = (j * interval - i)/ d
+                        ratio = j / (gun['size'] - 1)
+                        setAxisAngle("./UI/next.png", pos[j], dis, ratio)
+                    i += (time.perf_counter() - start_time) * 1000 + 1
+                elif gun['size'] == 32: #if gun is nemesis and charged full then switch mod to 1.
+                    mod = 2
+            else:
+                setAxisAngle("./UI/next.png", pos[0], 0, 0)
+                i = 0
         else:
-            setAxisAngle("./UI/next.png", pos[0], 0, 0)
-            i = 0
-    else:
-        img = ImageTk.PhotoImage(photo)
-        canvas.create_image((w - img.width()) // 2, (h - img.height()) // 2, image=img, anchor="nw")
+            img = ImageTk.PhotoImage(photo)
+            canvas.create_image((w - img.width()) // 2, (h - img.height()) // 2, image=img, anchor="nw")
+    except:
+        pass
     root.after(1, main) #1 millisecond
     
 listener.start()
