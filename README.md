@@ -2,7 +2,7 @@
 Make a visualize UI to read your input(mouse or another command) to start the recoil visualize to many rings like music game. 
 
 # How to setup requirement
-1. Download python 3.9 (https://www.python.org/downloads/release/python-3913), you can only download windows installer which is the easist method to download python.
+1. Download python 3.9 (https://www.python.org/downloads/release/python-3913), you can only download windows installer which is the simplest method to download python.
 2. Using Powershell or CMD to start command line operation and check python download yet.
     * You can directly open powershell in Apex_AimTrain directory
       * ![image](https://user-images.githubusercontent.com/60803717/233604193-f46411fc-166c-47af-b24f-c781dde6d484.png)
