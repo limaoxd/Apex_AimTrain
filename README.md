@@ -42,7 +42,9 @@ Make a visualize UI to read your input(mouse or another command) to start the re
     
     > **Warning**
     > If switch guns not success, you should shotdown this program and restart
-    
+3. Pressing mouse Lbutton and Rbutton at the same time to start process.
+   * ![image](https://user-images.githubusercontent.com/60803717/233610486-5c59712f-0dd6-4daf-aea6-ec554f773dcb.png)
+
 # Other programs
 * **aim_train.py** : Version 1 of AimTrain, only give you now direction that hardly reacting that.
 * **bullet_locate.py** : Helping developer to locating the bullets's position, you can modify the pictures in guns folder and do following commands
