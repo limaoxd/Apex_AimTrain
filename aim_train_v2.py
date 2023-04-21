@@ -1,13 +1,10 @@
-from cmath import sqrt
 import json
 import math
 import time
 import tkinter as tk
 import win32gui
 import win32con
-from multiprocessing.connection import Listener
-from tracemalloc import start
-from PIL import Image, ImageTk, ImageFilter, ImageOps, ImageDraw
+from PIL import Image, ImageTk, ImageFilter
 from pynput import mouse, keyboard
 
 #Create an instance of tkinter window or frame
