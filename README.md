@@ -1,5 +1,5 @@
 # Apex_AimTrain
-Make a visualize UI to read your input(mouse or another command) to start the recoil visualize to many rings like music game. 
+Make a visualize UI to read your input(mouse or another command) and start the recoil direction visualize to rings like music game(inspired from **Maimai**). 
 
 # How to setup requirement
 0. Use `git clone https://github.com/limaoxd/Apex_AimTrain.git` command line or download zip then unzip it.
