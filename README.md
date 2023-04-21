@@ -19,6 +19,10 @@ Make a visualize UI to read your input(mouse or another command) to start the re
     
 # How to start
 0. Setting your Apex to Borderless windows. (If you are using Multiple screen device, you can ignore it.)
+   * ![image](https://user-images.githubusercontent.com/60803717/233605510-6ef420ae-07db-4713-9bbf-d420c611056f.png)
+   * ![image](https://user-images.githubusercontent.com/60803717/233606317-dd6a9ea5-c944-4790-8a39-5f1e6616017e.png)
+   * You can see the ring UI on apex if success start.
+
 1. Default recoil pattern is Flatline(VK-47).
 2. Keys to switch your recoil pattern or another operations :
     * F1 Flatline(VK-47)
