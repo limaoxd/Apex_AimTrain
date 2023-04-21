@@ -37,7 +37,8 @@ Make a visualize UI to read your input(mouse or another command) to start the re
 # Other programs
 * **aim_train.py** : Version 1 of AimTrain, only give you now direction that hardly reacting that.
 * **bullet_locate.py** : Helping developer to locating the bullets's position, you can modify the pictures in guns folder and do following commands
-   * Run program and use Redirect command : `python bullet_locate.py > ./location/(name).txt`
+   * Run program and use Redirect command : 
+      * `python bullet_locate.py > ./location/(name).txt`
    * I am using Geogebra to list all position and following order to sort positions
 
 # Assets
