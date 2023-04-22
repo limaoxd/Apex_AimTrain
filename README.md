@@ -36,7 +36,7 @@ Make a visualize UI to read your input(mouse or another command) and start the r
     > Following guns have not add yet : **Spitfire、Rampage、Lstar、Havoc、Devotion、Alternator**
     
     > **Note**
-    > If your nemesis charged, recoil pattern WPM still maintain heighest , then you need press F3 to reset RPM after your guns energy is zero.
+    > If your nemesis charged, recoil pattern RPM still maintain heighest , then you need press F3 to reset RPM when your guns energy return to zero.
     
     > **Warning**
     > If switch guns not success, you should shotdown this program and restart
